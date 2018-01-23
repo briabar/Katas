@@ -33,7 +33,8 @@ class LinkedList(object):
         "Delete the first (head) element in the LinkedList as return it"
         if self.head:
             to_b_deleted = self.head
-            self.head = self.next
+            temp = to_b_deleted.next
+            self.head = temp
             return to_b_deleted
         else:
             return None
@@ -47,12 +48,7 @@ class Stack(object):
 
     def pop(self):
         "Pop (remove) the first element off the top of the stack and return it"
-        if self.head:
-            to_b_deleted = self.head
-            self.next = self.head
-            return to_b_deleted
-        else:
-            return None
+        return self.ll.delete_first()
 
 # Test cases
 # Set up some Elements
