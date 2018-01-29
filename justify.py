@@ -1,4 +1,6 @@
-# Your task in this Kata is to emulate text justification in monospace font. You will be given a single-lined text and the expected justification width. The longest word will never be greater than this width.
+# Your task in this Kata is to emulate text justification in monospace font.
+#You will be given a single-lined text and the expected justification width.
+#The longest word will never be greater than this width.
 #
 # Here are the rules:
 #
@@ -68,7 +70,7 @@ def justify2(array, width):
     # return result
 
 def justify(text, width):
-    word_array = text.split(' ')
+    word_array = text.split()
     line = ""
     i = -1
     result = []
@@ -83,6 +85,7 @@ def justify(text, width):
         if i == len(word_array) - 1:
             result.append(line[:-1])
             final = ''
+            print "CHEESE: " + str(result)
             for line in result:
                 # print("line top: "+line)
                 num_spaces = line.count(' ')
@@ -103,4 +106,4 @@ def justify(text, width):
 
 
 
-print(justify("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", 30))
+print(justify("Lorem ipsum dolor sit     amet,", 30))
