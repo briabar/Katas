@@ -17,3 +17,12 @@ Python 3.
 ## To Run
 
 python filename.py
+
+## Unfinished Challenges
+
+Justify.py
+
+## Notes and Todo
+
+add different implimentations of quicksort, refine understanding of graph
+traversal
