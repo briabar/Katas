@@ -34,7 +34,7 @@ def FindLongestPal(a):
 
 
 def FindLongestPalReal(a):
-"""This one actually works"""
+    """This one actually works"""
     a = a.replace(" ", "")
     list_of_pal = []
     if a == a[::-1]:
@@ -50,7 +50,7 @@ def FindLongestPalReal(a):
             if a[ix:ix+2] == a[ix+2:ix:-1]:
                 list_of_pal.append([ix, ix + 1, ix + 2])
         ix += 1
-
+    print list_of_pal
     ix = 0
     result = []
     for starts in list_of_pal:
@@ -66,7 +66,7 @@ def FindLongestPalReal(a):
                     end += 1
                 else: is_pal = False
             else: is_pal = False
-            result = sorted(result)
+    result = sorted(result)
     return a[result[-1][1][0]:result[-1][1][-1]+1]
 
 
