@@ -1,0 +1,12 @@
+def urlify(s):
+    array = []
+    for char in s:
+        if char is ' ':
+            array.append('%20')
+        else:
+            array.append(char)
+    url = ""
+    url = url.join(array)
+    return url
+
+print(urlify("www.abc I am g.com/horse eat/baby miner"))
