@@ -17,3 +17,5 @@ def palen_perm(s):
 
 
 print(palen_perm("caact"))
+
+#should be O(n)
