@@ -4,7 +4,7 @@ def rotate_image(matrix):
     for ix in range(0, height - 1):
         for nx in range(0, height):
             if ix -1 < 0:
-                print ix, ix, nx, nx
+                print ix, ix, nx, n
             else:
                 print ix -1, ix
     # 00 10
