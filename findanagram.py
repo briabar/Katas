@@ -3,12 +3,13 @@
 # True. Your function definition should look like: question1(s, t) and return a
 # boolean True or False.
 
-def FindAnagram(s,t):
+def question1(s,t):
     for char in t:
+        answer = True
         if char in s:
-            answer = True
+            pass
         else:
             return False
     return answer
 
-print(FindAnagram("udacity", "ua"))
+print(question1("udacity", "ua"))
