@@ -1,19 +1,26 @@
 import Queue as Q
 
 def question1(s,t):
-'''Given two strings s and t, determine whether some anagram of t is a substring
-of s. For example: if s = "udacity" and t = "ad", then the function returns
-True. Your function definition should look like: question1(s, t) and return a
-boolean True or False.'''
-    for char in t:
-        answer = True
-        if char in s:
-            pass
+    '''Given two strings s and t, determine whether some anagram of t is a substring
+    of s. For example: if s = "udacity" and t = "ad", then the function returns
+    True. Your function definition should look like: question1(s, t) and return a
+    boolean True or False.'''
+    if len(t) > len(s):
+        return False
+    front = 0
+    back = len(t)
+    while back <= len(s):
+        if set(s[front:back]) == set(t):
+            return True
         else:
-            return False
-    return answer
+            front += 1
+            back += 1
+    return False
 
-print(question1("udacity", "ua"))
+print(question1("udacity", ""))  #True
+print(question1("chicken is the  best meat money can buy", "uy"))  #True
+print(question1("a", "chicken is the  best meat money can buy"))  #False
+print(question1("", "asd"))  #False
 
 
 # Question 2
@@ -52,21 +59,25 @@ def question2(a):
                     end += 1
                 else: is_pal = False
             else: is_pal = False
+    if result ==[]:
+        return -1
     result = sorted(result)
     return a[result[-1][1][0]:result[-1][1][-1]+1]
 
 
-print(question2("cattaccattacblskddidmmooommm"))
+print(question2("cattaccattacblskddidmmooommm")) #cattaccattac
+print(question2("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")) # all of this
+print(question2("123456789")) #-1
 
 
 def question3(G):
-'''Given an undirected graph G, find the minimum spanning tree within G.
-A minimum spanning tree connects all vertices in a graph with the smallest
-possible total weight of edges. Your function should take in and return an
-adjacency list structured like this:
-{'A': [('B', 2)],
- 'B': [('A', 2), ('C', 5)],
- 'C': [('B', 5)]}'''
+    '''Given an undirected graph G, find the minimum spanning tree within G.
+    A minimum spanning tree connects all vertices in a graph with the smallest
+    possible total weight of edges. Your function should take in and return an
+    adjacency list structured like this:
+    {'A': [('B', 2)],
+     'B': [('A', 2), ('C', 5)],
+     'C': [('B', 5)]}'''
     q = Q.PriorityQueue()
     result = {}
     for node in G:
@@ -83,8 +94,14 @@ question3({'A': [('B', 2), ('C', 2), ('E', 7)],
       'C': [('A', 2), ('E', 2)],
       'D': [('B', 5), ('F', 10)],
       'E': [('A', 7), ('C', 2)],
-      'F': [('D', 10)]})
+      'F': [('D', 10)]})  #{'A': ('B', 2), 'C': ('A', 2), 'B': ('A', 2), 'E': ('C', 2), 'D': ('B', 5), 'F': ('D', 10)}
 
+question3({'A': [('B', 1), ('C', 1), ('D', 1)],
+      'B': [('A', 1)],
+      'C': [('A', 1)],
+      'D': [('A', 1)],})  #{'A': ('B', 1), 'C': ('A', 1), 'B': ('A', 1), 'D': ('A', 1)}
+
+question3({})  #{}
 
 def question4(T, r, n1, n2):
     '''Find the least common ancestor between two nodes on a binary search tree.
@@ -140,9 +157,25 @@ print question4([[0, 1, 0, 0, 0],
            [0, 0, 0, 0, 0]],
           3,
           1,
-          4)
+          4)  #3
 
+print question4([[0, 0, 0, 0, 0],
+           [0, 0, 0, 1, 0],
+           [0, 0, 0, 0, 0],
+           [1, 0, 0, 0, 0],
+           [0, 1, 1, 0, 0]],
+          4,
+          1,
+          3)  #4
 
+print question4([[0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0]],
+          3,
+          1,
+          4)  #error
 # Question 5
 #
 # Find the element in a singly linked list that's m elements from the end.
@@ -172,11 +205,17 @@ class LinkedList(object):
     def question5(self, m):
         '''I chose to make this a class method instead of a seperate function
         I figure it makes the code a lot more clean. This works in O(n) time.'''
+        if not self.head:
+            print "linked list contains no nodes"
+            return -1
         current = self.head
         array = [current.data]
         while current.next:
             current = current.next
             array.append(current.data)
+        if len(array) < m:
+            print "no item at position %s" % m
+            return -1
         print array[-m]
 
 nodes = [Node(1),
@@ -186,9 +225,22 @@ nodes = [Node(1),
          Node(5),
          Node(6)]
 
+nodes2 = [Node(1)]
+
+nodes3 = []
+
 ll = LinkedList()
+ll2 = LinkedList()
+ll3 = LinkedList()
+
 
 for node in nodes:
     ll.append(node)
+for node in nodes2:
+    ll2.append(node)
+for node in nodes3:
+    ll3.append(node)
 
-ll.question5(3)
+ll.question5(3)  #pizza
+ll2.question5(3)  #pizza
+ll3.question5(3)  #pizza

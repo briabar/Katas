@@ -12,4 +12,23 @@ def question1(s,t):
             return False
     return answer
 
-print(question1("udacity", "ua"))
+
+
+def question1_2(s,t):
+    if len(t) > len(s):
+        return False
+    front = 0
+    back = len(t)
+    while back <= len(s):
+        if set(s[front:back]) == set(t):
+            return True
+        else:
+            front += 1
+            back += 1
+    return False
+
+print(question1_2("udacity", "adic"))
+print(question1_2("udacity", ""))  #True
+print(question1_2("chicken is the  best meat money can buy", "uy"))  #True
+print(question1_2("a", "chicken is the  best meat money can buy"))  #False
+print(question1_2("", "asd"))  #False
