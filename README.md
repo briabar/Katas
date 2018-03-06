@@ -24,4 +24,4 @@ Justify.py
 
 ## Notes and Todo
 
-refactor CCI1.8 to be more modular.  
+refactor CCI1.8 to be more modular.
