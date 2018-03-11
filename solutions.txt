@@ -1,0 +1,38 @@
+Question 1.
+
+This is a pretty simple and, I think, clean solution.  One reason I like this
+is that by checking in blocks of length of t you don't need to worry about cases
+of double characters, which would be a problem for a set normally.
+O(s+t) space complexity for the two strings
+O(n) time complexity to iterate through s times
+
+Question 2.
+
+For this problem I reasoned that all palindromes have a center that is either
+even or odd.  I first find these and store them inside an array.  If I find any
+see if I can extend them outwards character by character.  Once I find these I
+sort them by length and return the largest.
+O(n^k) time complexity where K is the number of starts in list_of_pal.
+O(n) space complexity where n is the length of string a.
+
+Question 3.
+
+In this question I decided to use a priority queue because it allows me to easy
+sort the edges by weight.
+
+O(nk) n is the number of nodes in a graph and k is the number of edges in a node.
+O(k) space complexity where n is the number of edges in the graph
+
+Question 4
+first find all the parent nodes from n1 to root.  Then do the same for n2, but
+return the first n2 node that is also in the list of n1 parents.
+
+O(n log(n)) n is the number of nodes in the tree and log n is the time it takes
+to search from the node to the root.
+
+Question 5.
+
+Since this linked list doesn't link backwards I decided to iterate through the whole
+data structure and store its values in an array.
+O(n) time complexity to iterate through items.
+O(n) space complexity.  we only need to space of the linked list items and the array.

@@ -124,27 +124,27 @@ def question4(T, r, n1, n2):
              3,
              1,
              4)'''
-    root_nodes = []
+    parent_nodes = []
     while n1 != r:
-        n1 = get_root(T, n1)
-        if n1 is "error":
+        n1 = get_parent(T, n1)
+        if n1 == "error":
             return n1
-        root_nodes.append(n1)
-    if len(root_nodes) is 0:
+        parent_nodes.append(n1)
+    if len(parent_nodes) == 0:
         return "error"
     while n2 != r:
-        n2 = get_root(T, n2)
+        n2 = get_parent(T, n2)
         if n2 == "error":
             return n2
-        if n2 in root_nodes:
+        if n2 in parent_nodes:
             return n2
     return "error"
 
 
-def get_root(T, n):
-    for edge in range(0, len(T)):
-        if T[edge][n] == 1:
-            return edge
+def get_parent(T, n):
+    for i in range(0, len(T)):
+        if T[i][n] == 1:
+            return i
     return "error"
 
 
