@@ -4,14 +4,14 @@ Katas
 Description
 ---------------------
 
-This is a collection of programming tasks from the website codewars.com.
+This is a collection of programming tasks from the website codewars.com and the book Cracking the Coding Interview.
 
 Installation
 ----------------
 
 ## Dendencies and Runtime Environment
 
-Everything here should run python.  I'm going to try and keep everything in
+Everything here should run in python.  I'm going to try and keep everything in
 Python 3.
 
 ## To Run
@@ -24,5 +24,4 @@ Justify.py
 
 ## Notes and Todo
 
-add different implimentations of quicksort, refine understanding of graph
-traversal
+refactor CCI1.9 to be more modular.  
