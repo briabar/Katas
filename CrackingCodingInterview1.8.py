@@ -26,3 +26,5 @@ zero_matrix([[1, 2, 3], [1, 0, 3], [1, 2, 3]])
 zero_matrix([[0, 2, 3], [1, 0, 3], [1, 2, 0]])
 zero_matrix([[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 0]])
 zero_matrix([[0, 2, 3], [1, 0, 3], [1, 2, 3]])
+
+# better practice would be to make this modular.  
