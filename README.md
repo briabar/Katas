@@ -20,8 +20,6 @@ python filename.py
 
 ## Unfinished Challenges
 
-Justify.py
+Justify.py, remove_dups.py
 
 ## Notes and Todo
-
-refactor CCI1.8 to be more modular.
